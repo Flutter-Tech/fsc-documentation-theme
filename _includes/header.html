@@ -5,7 +5,7 @@
     <div class="relative">
       <a href="/" class="flex" title="Back to {{ site.title }} homepage">
         {% if site.logo.size > 0 %}
-          <img class="w-auto h-auto max-h-10 {% if site.logo_invert %}brightness-0 invert {% endif %} {% if site.logo_message.size > 0 %}mt-2{% endif %}" src={{ site.logo }} alt="Back to {{ site.title }} homepage">
+          <img class="w-auto h-auto {% if site.logo_invert %}brightness-0 invert {% endif %} {% if site.logo_message.size > 0 %}mt-2{% endif %}" src={{ site.logo }} alt="Back to {{ site.title }} homepage">
         {% else %}
           {{ site.title }}
         {% endif %}
