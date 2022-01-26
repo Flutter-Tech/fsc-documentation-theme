@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-10 w-full">
+<div class="sticky top-0 z-10 w-full min-h-[90px]">
   <!-- HEADER NAVBAR -->
   <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg">
     <!-- SITE LOGO -->
@@ -17,7 +17,7 @@
     <!-- SITE LOGO -->
     <!-- SEARCH -->
     <!-- SITE HORIZONTAL NAVBAR -->
-    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between min-h-[90px]">
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
       <nav class="flex">
         {% for link in site.data.menus_header.left %}
           {% if link.url contains 'http' %}
