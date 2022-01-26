@@ -1,15 +1,7 @@
 {% if include.columns %}
-    {% assign columns = include.columns %}
-    {% if columns == '1' %}
-        {% assign container = ' uk-container-xsmall' %}
-    {% elsif columns == '2' %}
-        {% assign container = ' uk-container-small' %}
-    {% else %}
-        {% assign container = '' %}
-    {% endif %}
-{% else %}
-    {% assign columns = 3 %}
-    {% assign container = '' %}
+  {% assign columns = include.columns %}
+  {% else %}
+  {% assign columns = 3 %}
 {% endif %}
 
 
@@ -17,7 +9,7 @@
 
 {% if include.subtitle %}<p class="text-xl text-gray-400">{{ include.subtitle | escape }}</p>{% endif %}
 
-<ul role="list" class="grid grid-cols-1 gap-3 p-0 m-0 mt-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 md:-ml-[1.625em]">
+<ul role="list" class="grid grid-cols-1 gap-3 p-0 m-0 mt-3 sm:grid-cols-2 md:grid-cols-{{columns}} lg:grid-cols-{{columns}} md:-ml-[1.625em]">
   {% for item in site.data.navigation_boxes %}
     <li class="flex flex-col col-span-1 text-center bg-white rounded-lg shadow shadow-slate-300 hover:bg-slate-50">
       <a href="/{{ item.doc }}" class="hover:no-underline" title="View {{ item.title }}">
