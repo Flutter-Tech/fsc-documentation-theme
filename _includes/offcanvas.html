@@ -9,9 +9,9 @@
       </button>
     </div>
     <div class="flex-1 h-0 pb-4 overflow-y-auto">
-      <div class="flex items-center flex-shrink-0 px-4 py-5 bg-theme-header-bg">
+      <div class="flex items-center flex-shrink-0 p-4 bg-theme-header-bg">
         {% if site.logo.size > 0 %}
-          <img class="w-auto h-8 {% if site.logo_invert %}brightness-0 invert {% endif %}" src={{ site.logo }} alt="Back to {{ site.title }} homepage">
+          <img class="w-auto {% if site.logo_invert %}brightness-0 invert {% endif %}" src={{ site.logo }} alt="Back to {{ site.title }} homepage">
           {% if site.logo_message.size > 0 %}
             <div class="text-sm text-white">{{ site.logo_message }}</div>
           {% endif %}
