@@ -17,7 +17,7 @@
   <li
     class="menu-item-{{ forloop.index }} ml-3 pt-2"
   >
-    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="{% if item.url == page.url %}text-theme-color font-medium{% else %}text-gray-500{% endif %} {% if include.level == 0 %}text-base{% else %}text-sm{% endif %} pr-5 no-underline menu-link hover:text-theme-color"
+    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="{% if item.url == page.url %}text-theme-color font-medium{% else %}text-gray-500{% endif %} {% if forloop.index == 0 %}text-base{% else %}text-sm{% endif %} pr-5 no-underline menu-link hover:text-theme-color"
       > {{ item.title }}</a
     >
   </li>
