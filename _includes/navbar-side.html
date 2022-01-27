@@ -5,7 +5,7 @@
   {% for item in menu %}
   {% if item.children %}
   <li class="nav-parent menu-item-{{ forloop.index }} ml-3 relative pt-2">
-    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="{% if item.url == page.url %}text-theme-color{% else %}text-gray-500{% endif %} pr-5 no-underline menu-link hover:text-theme-color">{{ item.title }}</a>
+    <a href="{{ item.url }}" title="Go to {{ item.title }}" class="{% if item.url == page.url %}text-theme-color font-medium{% else %}text-gray-500{% endif %} pr-5 no-underline menu-link hover:text-theme-color">{{ item.title }}</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
