@@ -26,6 +26,11 @@
   .boxes-svg svg{
     @apply stroke-theme-color w-16 h-16;
   }
+  @media (max-width: 600px) {
+    #show-results-count{
+      display: none;
+    }
+  }
 }
 
 /* Charts */

@@ -1,3 +1,5 @@
+---
+---
 (function (flt, undefined) {
   flt.addEvent = function (el, type, handler) {
     if (el.attachEvent) el.attachEvent('on' + type, handler); else el.addEventListener(type, handler);
@@ -229,4 +231,7 @@ flt.onReady(function () {
   initMobileNavigation();
   initDisplayToggler();
   initHierarchyTree();
+  {% if site.site_search %}
+  initSearch();
+  {% endif %}
 })
