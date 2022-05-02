@@ -39,6 +39,12 @@ function initSearch() {
     const resultCount = document.getElementById('show-results-count');
     const searchDiv = document.getElementById('search');
 
+    function hideResults() {
+        resultCount.classList.remove('ml-0');
+        resultCount.classList.add('ml-[-46%]');
+        resultSection.classList.add('hidden');
+    }
+
     //make results visible when focus is gained if search is not empty
     desktopSearch.addEventListener('focus', function () {
         resultCount.classList.remove('ml-[-46%]');
@@ -49,18 +55,14 @@ function initSearch() {
     document.addEventListener('click', function (e) {
         const withinBoundaries = e.composedPath().includes(searchDiv)
         if (!withinBoundaries) {
-            resultCount.classList.remove('ml-0');
-            resultCount.classList.add('ml-[-46%]');
-            resultSection.classList.add('hidden');
+            hideResults();
         }
     });
 
     document.addEventListener('focus', function (e) {
         const withinBoundaries = e.composedPath().includes(searchDiv)
         if (!withinBoundaries) {
-            resultCount.classList.remove('ml-0');
-            resultCount.classList.add('ml-[-46%]');
-            resultSection.classList.add('hidden');
+            hideResults();
         }
     });
 
@@ -73,6 +75,12 @@ function initSearch() {
 
         resultCount.innerHTML = 'Searching....';
         const query = e.target.value;
+
+        if (query.length === 0) {
+            hideResults();
+            return;
+        }
+
         const results = idx.search(query);
         resultCount.innerHTML = results.length + ' Result' + (results.length !== 1 ? 's' : '');
 
