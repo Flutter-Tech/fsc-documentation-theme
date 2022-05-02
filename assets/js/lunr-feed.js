@@ -93,7 +93,7 @@ function initSearch() {
             link.innerHTML = docIndex[ref].title;
 
             var li = document.createElement('li');
-            li.classList.add('p-px');
+            li.classList.add('p-px', 'w-100', 'hover:bg-slate-50');
             li.appendChild(link);
 
             resultSection.appendChild(li);
