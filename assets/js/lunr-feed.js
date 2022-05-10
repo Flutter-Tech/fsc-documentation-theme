@@ -7,7 +7,7 @@ layout: null
 {% assign allPages = pages | concat: posts %}
 
 {% capture lunrData %}
-var docIndex = [
+window.JEKYLL_DOC_INDEX = [
 {% for page in allPages %}
 {
 "id": {{ forloop.index0 }},
@@ -22,15 +22,17 @@ var docIndex = [
 
 {{ lunrData | strip_newlines }}
 
-var idx = lunr(function () {
-    this.ref('id')
-    this.field('title')
-    this.field('body')
+function createLunrIndex() {
+    return lunr(function () {
+        this.ref('id')
+        this.field('title')
+        this.field('body')
 
-    docIndex.forEach(function (doc) {
-        this.add(doc)
-    }, this)
-});
+        window.JEKYLL_DOC_INDEX.forEach(function (doc) {
+            this.add(doc)
+        }, this)
+    })
+}
 
 function initSearch() {
     // add keyup to search-input
@@ -73,7 +75,7 @@ function initSearch() {
 
         resultCount.innerHTML = 'Searching....';
         const query = e.target.value;
-        const results = idx.search(query);
+        const results = window.LUNR_INDEX.search(query);
         resultCount.innerHTML = results.length + ' Result' + (results.length !== 1 ? 's' : '');
 
         resultSection.innerHTML = '';
@@ -81,8 +83,8 @@ function initSearch() {
             var ref = results[item].ref;
             
             var link = document.createElement('a');
-            link.href = docIndex[ref].url;
-            link.innerHTML = docIndex[ref].title;
+            link.href = window.JEKYLL_DOC_INDEX[ref].url;
+            link.innerHTML = window.JEKYLL_DOC_INDEX[ref].title;
 
             var li = document.createElement('li');
             li.classList.add('p-px', 'w-100', 'hover:bg-slate-50');
@@ -92,4 +94,7 @@ function initSearch() {
         }
     });
 }
+
+window.LUNR_INDEX = createLunrIndex();
+
 {% endif %}
