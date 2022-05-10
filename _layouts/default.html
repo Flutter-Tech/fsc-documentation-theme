@@ -2,6 +2,9 @@
 <html lang="{{ site.lang | default: "en-UK" }}" class="scroll-smooth">
   {% include head.html %}
   <body class="relative">
+    {% if site.google_tag_manager %}
+    {% include google-tag-manager-body.html %}
+    {% endif %}
     {% include offcanvas.html %}
     {% include header.html %}
     {% include content.html %}

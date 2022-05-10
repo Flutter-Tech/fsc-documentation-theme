@@ -40,5 +40,8 @@ input: GFM
 kramdown:
   auto_ids: true
 
-# Google analytics code, get your code here https://www.google.com/analytics/
+# ANALYTICS
+# Google Analytics token, get it here https://www.google.com/analytics/
 google_analytics:
+# Google Tag Manager token, get it code here https://tagmanager.google.com
+google_tag_manager:
