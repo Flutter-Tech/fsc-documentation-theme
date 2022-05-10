@@ -87,8 +87,11 @@ function initSearch() {
             var ref = results[item].ref;
             
             var link = document.createElement('a');
-            link.href = window.JEKYLL_DOC_INDEX[ref].url;
-            link.innerHTML = window.JEKYLL_DOC_INDEX[ref].title;
+            var res = window.JEKYLL_DOC_INDEX[ref];
+            link.href = res.url;
+            link.innerHTML = res.title;
+            link.setAttribute("title", "Open " + res.title);
+            link.classList.add('block');
 
             var li = document.createElement('li');
             li.classList.add('p-px', 'w-100', 'hover:bg-slate-50');
