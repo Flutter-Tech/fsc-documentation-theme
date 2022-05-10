@@ -23,7 +23,7 @@ window.JEKYLL_DOC_INDEX = [
 {{ lunrData | strip_newlines }}
 
 function createLunrIndex() {
-    return lunr(function () {
+    window.LUNR_INDEX = lunr(function () {
         this.ref('id')
         this.field('title')
         this.field('body')
@@ -102,6 +102,6 @@ function initSearch() {
     });
 }
 
-window.LUNR_INDEX = createLunrIndex();
+createLunrIndex();
 
 {% endif %}
