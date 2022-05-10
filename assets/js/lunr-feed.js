@@ -78,6 +78,10 @@ function initSearch() {
         const results = window.LUNR_INDEX.search(query);
         resultCount.innerHTML = results.length + ' Result' + (results.length !== 1 ? 's' : '');
 
+        if(results.length === 0) {
+            resultSection.classList.add('hidden');
+        }
+
         resultSection.innerHTML = '';
         for (var item in results) {
             var ref = results[item].ref;
