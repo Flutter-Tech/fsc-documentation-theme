@@ -1,0 +1,7 @@
+{% if include.message %}
+<div id="adblocker-warning" class="sticky text-center top-0 w-full z-10 bg-theme-adblocker-warning-bg">
+    <div class="py-2 text-theme-adblocker-warning-text">
+        {{ include.message }}
+    </div>
+</div>
+{% endif %}

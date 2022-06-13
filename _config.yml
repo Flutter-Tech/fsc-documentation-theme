@@ -45,3 +45,7 @@ kramdown:
 google_analytics:
 # Google Tag Manager token, get it code here https://tagmanager.google.com
 google_tag_manager:
+
+adblocker_warning:
+  enabled: false
+  message: We use Google Analytics to improve our website. Please configure your ad blocker to allow tracking on this website.
