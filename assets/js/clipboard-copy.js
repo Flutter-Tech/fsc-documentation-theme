@@ -31,6 +31,7 @@ pageHeadings.forEach((heading) => {
       setTimeout(() => {
         feedback.classList.add("hidden");
       }, 1500);
+    location.hash = "#" + elementId;
     }
   });
 
