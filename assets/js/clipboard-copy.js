@@ -1,7 +1,7 @@
 const pageHeadings = document.querySelectorAll("h2, h3, h4, h5, h6");
 
 pageHeadings.forEach((heading) => {
-  const selectedId = heading.getAttribute("id");
+  const headingId = heading.getAttribute("id");
   // Add relative class to heading for positioning of child button
   heading.classList.add("relative");
 
@@ -29,7 +29,7 @@ pageHeadings.forEach((heading) => {
   // Show button on mouseover
   heading.addEventListener("mouseover", () => {
     if (document.getElementById(headingId + "-clip-btn")) {
-    clipboardBtn = document.getElementById(selectedId + "-clip-btn");
+    clipboardBtn = document.getElementById(headingId + "-clip-btn");
     clipboardBtn.classList.remove("hidden");
   }
 
@@ -38,7 +38,7 @@ pageHeadings.forEach((heading) => {
   // Hide button on mouseout
   heading.addEventListener("mouseout", () => {
     if (document.getElementById(headingId + "-clip-btn")) {
-    clipboardBtn = document.getElementById(selectedId + "-clip-btn");
+    clipboardBtn = document.getElementById(headingId + "-clip-btn");
     clipboardBtn.classList.add("hidden");
     }
   }, false);
