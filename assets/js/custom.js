@@ -225,6 +225,33 @@ function initMobileNavigation() {
   });
 }
 
+function initAdBlockerWarning() {
+  // Create a fake ad elment
+  const ad = document.createElement('ins');
+  ad.className = 'AdSense';
+  ad.style.display = 'block';
+  ad.style.position = 'absolute';
+  ad.style.top = '-1px';
+  ad.style.height = '1px';
+  document.body.appendChild(ad);
+
+  // Adding a timeout so adblockers have time to hide the ad element
+  window.setTimeout(function() {
+    // When an adblocker is enabled the ad will be have no height
+    var isAdBlockEnabled = !ad.clientHeight;
+    document.body.removeChild(ad);
+
+    // Show/hide the warning message
+    const adblockerWarning = document.getElementById('adblocker-warning');
+    if(adblockerWarning && isAdBlockEnabled){
+      adblockerWarning.classList.toggle('hidden');
+    }
+
+  }, 400);
+
+  return isAdBlockEnabled;
+}
+
 flt.onReady(function () {
   initLazyLoadImages();
   initSideMenuNavigation();
@@ -233,5 +260,8 @@ flt.onReady(function () {
   initHierarchyTree();
   {% if site.site_search %}
   initSearch();
+  {% endif %}
+  {% if site.adblocker_warning.enabled %}
+  initAdBlockerWarning();
   {% endif %}
 })

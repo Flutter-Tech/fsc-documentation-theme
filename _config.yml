@@ -48,4 +48,4 @@ google_tag_manager:
 
 adblocker_warning:
   enabled: false
-  message: We use Google Analytics to improve our website. Please configure your ad blocker to allow tracking on this website.
+  message: We use Google Analytics to improve our website. Please add this website to your ad blocker allowlist.
