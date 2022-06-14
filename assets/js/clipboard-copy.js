@@ -6,6 +6,14 @@ pageHeadings.forEach((heading) => {
   heading.classList.add("relative");
 
   // Create button
+  let clipboardBtn = document.createElement("button");
+  clipboardBtn.setAttribute("type", "button");
+  clipboardBtn.setAttribute("id", headingId + "-clip-btn");
+  clipboardBtn.setAttribute("title", "Copy link to clipboard");
+  clipboardBtn.classList.add("hidden", "absolute", "clipboardBtn");
+  heading.prepend(clipboardBtn);
+
+  // Create feedback div
   const feedback = document.createElement("div");
   const feedbackId = headingId + "-clip-feedback";
   feedback.setAttribute("id", feedbackId);
@@ -14,7 +22,7 @@ pageHeadings.forEach((heading) => {
   clipboardBtn.before(feedback);
 
   clipboardBtn.addEventListener("click", () => {
-    const elementId = elHeading.getAttribute("id");
+    const elementId = heading.getAttribute("id");
     copyTextToClipboard(getAnchorUrl(elementId));
 
     if (document.getElementById(feedbackId)) {
@@ -29,17 +37,17 @@ pageHeadings.forEach((heading) => {
   // Show button on mouseover
   heading.addEventListener("mouseover", () => {
     if (document.getElementById(headingId + "-clip-btn")) {
-    clipboardBtn = document.getElementById(headingId + "-clip-btn");
-    clipboardBtn.classList.remove("hidden");
-  }
+      clipboardBtn = document.getElementById(headingId + "-clip-btn");
+      clipboardBtn.classList.remove("hidden");
+    }
 
   }, false);
 
   // Hide button on mouseout
   heading.addEventListener("mouseout", () => {
     if (document.getElementById(headingId + "-clip-btn")) {
-    clipboardBtn = document.getElementById(headingId + "-clip-btn");
-    clipboardBtn.classList.add("hidden");
+      clipboardBtn = document.getElementById(headingId + "-clip-btn");
+      clipboardBtn.classList.add("hidden");
     }
   }, false);
 })
