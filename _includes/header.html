@@ -1,4 +1,7 @@
 <div class="sticky top-0 z-10 w-full min-h-[100px]">
+  {% if site.adblocker_warning.enabled %}
+    {% include adblocker-warning.html message=site.adblocker_warning.message %}
+  {% endif %}
   <!-- HEADER NAVBAR -->
   <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg min-h-[100px]">
     <!-- SITE LOGO -->

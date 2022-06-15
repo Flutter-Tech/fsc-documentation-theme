@@ -247,7 +247,7 @@ function initAdBlockerWarning() {
       adblockerWarning.classList.toggle('hidden');
     }
 
-  }, 400);
+  }, 200);
 
   return isAdBlockEnabled;
 }
