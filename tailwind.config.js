@@ -22,6 +22,8 @@ module.exports = {
         'theme-header-support-button-bg-hover': '#3CA8EF',
         'theme-mobile-menu-icon': '#FFFFFF',
         'theme-mobile-menu-icon-hover': '#3CA8EF',
+        'theme-adblocker-warning-bg': '#3CA8EF',
+        'theme-adblocker-warning-text': '#FFFFFF'
       },
       typography: (theme) => ({
         DEFAULT: {
