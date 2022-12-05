@@ -1,6 +1,6 @@
 <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">Tags</div>
-<ul>
+<ul class="px-0 py-1 pb-3 pl-4">
 {% for tag in site.tags %}
-<li><a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a></li>
+<li><a href="/blog/tags#{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
 {% endfor %}
 </ul>
