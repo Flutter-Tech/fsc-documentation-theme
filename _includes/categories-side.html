@@ -1,1 +1,6 @@
-<div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">Categories</div>
+<div class="px-0 py-1 pb-1 pl-4 font-bold uppercase">Categories</div>
+<ul class="px-0 py-1 pb-1 pl-4">
+{% for category in site.categories %}
+<li class="pb-1"><a class="text-theme-color hover:underline" href="/blog/categories#{{ category[0] | slugify }}" title="View {{ tag[0] }} category posts">{{ category[0] }}</a></li>
+{% endfor %}
+</ul>
