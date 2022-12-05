@@ -14,10 +14,10 @@
     {% endif %}
     {% if page.title%}
     <h1>{{page.title}}</h1>
-    {% else %}
-    <h1>Untitled post</h1>
     {% endif %}
-    {{ page.date | date: "%b %d, %Y" }}
+    {% if page.date%}
+    <div class="post-date">{{ page.date | date: "%b %d, %Y" }}</div>
+    {% endif %}
     {{ content }}
     {% if page.article_navigation %}
     {% include paginate-articles.html %}
