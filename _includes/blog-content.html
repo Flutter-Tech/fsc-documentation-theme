@@ -16,8 +16,7 @@
     <h1>{{page.title}}</h1>
     {% endif %}
     {% if page.date%}
-    <div class="post-date">{{ page.date | date: "%b %d, %Y" }}</div>
-    {% endif %}
+    <div class="mt-[-30px] text-sm">{{ page.date | date: "%b %d, %Y" }} - {% if page.author%}{{ page.author }}{% endif %}</div>
     {{ content }}
     {% if page.article_navigation %}
     {% include paginate-articles.html %}
