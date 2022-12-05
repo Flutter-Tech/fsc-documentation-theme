@@ -23,7 +23,8 @@
     <hr/>
     <div class="font-bold">Tags:
     {% for tag in page.tags %}
-    <a href="#{{ tag[0] | slugify }}" class="pl-3">{{ tag[0] }}</a>
+    {{ tag }}
+    <a class="text-theme-color hover:underline" href="/blog/tags#{{ tag | slugify }}" title="View {{ tag }} tag posts">{{ tag }}</a>
     {% endfor %}
     </div>
     {% endif %}
