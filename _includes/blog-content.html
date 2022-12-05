@@ -15,8 +15,9 @@
     {% if page.title%}
     <h1>{{page.title}}</h1>
     {% endif %}
-    {% if page.date%}
-    <div class="mt-[-30px] text-sm">{{ page.date | date: "%b %d, %Y" }} - {% if page.author%}{{ page.author }}{% endif %}</div>
+    {% if page.date %}
+    <div class="mt-[-30px] text-sm">{{ page.date | date: "%b %d, %Y" }} - {% if page.author %}{{ page.author }}{% endif %}</div>
+    {% endif %}
     {{ content }}
     {% if page.article_navigation %}
     {% include paginate-articles.html %}
