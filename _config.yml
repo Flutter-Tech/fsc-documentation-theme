@@ -23,7 +23,6 @@ site_search: false # Set to false to disable the site search
 # Jekyll plugins
 plugins:
   - jekyll-remote-theme
-  - jekyll-archives
 exclude:
   - Gemfile
   - Gemfile.lock
