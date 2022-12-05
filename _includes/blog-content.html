@@ -21,9 +21,11 @@
     {{ content }}
     {% if page.tags%}
     <hr/>
+    <div class="font-bold">Tags:
     {% for tag in page.tags %}
-    <a href="#{{ tag[0] | slugify }}" class="pl-3 font-bold">{{ tag[0] }}</a>
+    <a href="#{{ tag[0] | slugify }}" class="pl-3">{{ tag[0] }}</a>
     {% endfor %}
+    </div>
     {% endif %}
     {% if page.article_navigation %}
     {% include paginate-articles.html %}
