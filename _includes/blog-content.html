@@ -19,16 +19,17 @@
     <div class="mt-[-30px] text-sm">{{ page.date | date: "%b %d, %Y" }}{% if page.author %} - by {{ page.author }}{% endif %}</div>
     {% endif %}
     {{ content }}
-    {% if page.categories%}
+    {% if page.categories or page.tags%}
     <hr/>
-    <div class="font-bold">Categories:
+    {% endif %}
+    {% if page.categories%}
+    <div class="mb-5 font-bold">Categories:
     {% for category in page.categories %}
     <a class="pl-3 text-theme-color hover:underline" href="/blog/categories#{{ category | slugify }}" title="View {{ category }} category posts">{{ category }}</a>
     {% endfor %}
     </div>
     {% endif %}
     {% if page.tags%}
-    <hr/>
     <div class="font-bold">Tags:
     {% for tag in page.tags %}
     <a class="pl-3 text-theme-color hover:underline" href="/blog/tags#{{ tag | slugify }}" title="View {{ tag }} tag posts">{{ tag }}</a>
