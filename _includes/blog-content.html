@@ -19,6 +19,12 @@
     <div class="mt-[-30px] text-sm">{{ page.date | date: "%b %d, %Y" }}{% if page.author %} - by {{ page.author }}{% endif %}</div>
     {% endif %}
     {{ content }}
+    {% if page.tags%}
+    <hr/>
+    {% for tag in page.tags %}
+    <a href="#{{ tag[0] | slugify }}" class="pl-3 font-bold">{{ tag[0] }}</a>
+    {% endfor %}
+    {% endif %}
     {% if page.article_navigation %}
     {% include paginate-articles.html %}
     {% endif %}
