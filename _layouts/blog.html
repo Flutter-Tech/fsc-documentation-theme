@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-UK" }}" class="scroll-smooth">
+  {% include head.html %}
+  <body class="relative">
+    {% if site.google_tag_manager %}
+    {% include google-tag-manager-body.html %}
+    {% endif %}
+    {% include offcanvas.html %}
+    {% include header.html %}
+    {% include blog-content.html %}
+    <script defer type="text/javascript" src="{{ "/assets/js/clipboard-copy.js" | relative_url }}"></script>
+  </body>
+</html>
